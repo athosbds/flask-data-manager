@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuários Cadastrados</title>
+</head>
+<body>
+    <h1>Lista de Usuários</h1>
+    {% if users %}
+        <ul>
+            {% for user in users %}
+                <li>ID: {{ user[0] }} | Nome: {{ user[1] }} | Idade: {{ user[2] }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum usuário cadastrado.</p>
+    {% endif %}
+    <br>
+    <form action="/delete_all" method="get"">
+        <button type="submit">Deletar todos os usuários</button>
+    </form>
+    <br>
+    <a href="/">Voltar ao início</a> | <a href="/add">Cadastrar novo usuário</a>
+</body>
+</html>
