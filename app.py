@@ -16,32 +16,17 @@ def index():
     return render_template('index.html')
 @app.route('/users')
 def listar_usuarios():
-    database = sqlite3.connect('users.db')
-    cursor = database.cursor()
-    cursor.execute('SELECT * FROM user')
-    users = cursor.fetchall()
-    database.close()
+   # lógica
     return render_template('users.html', users=users)
 @app.route('/add', methods=['GET', 'POST'])
 def add():
     if request.method == 'POST':
-        name = request.form['name']
-        age = request.form['age']
-        database = sqlite3.connect('users.db')
-        cursor = database.cursor()
-        cursor.execute('INSERT INTO user (name, age) VALUES (?, ?)', (name, age))
-        database.commit()
-        database.close()
+        #lógica
         return redirect('/users')
     return render_template('register.html')
 @app.route('/delete_all')
 def delete():
-    database = sqlite3.connect('users.db')
-    cursor = database.cursor()
-    cursor.execute("DELETE FROM user")
-    cursor.execute("DELETE FROM sqlite_sequence WHERE name='user'")
-    database.commit()
-    database.close()
+    #lógica
     return redirect('/users')
 
 if __name__ == "__main__":
