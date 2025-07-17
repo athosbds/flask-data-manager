@@ -21,7 +21,7 @@ def listar_usuarios():
     cursor.execute('SELECT * FROM user')
     users = cursor.fetchall()
     database.close()
-    return render_template('usuarios.html', users=users)
+    return render_template('users.html', users=users)
 @app.route('/add', methods=['GET', 'POST'])
 def add():
     if request.method == 'POST':
@@ -33,12 +33,13 @@ def add():
         database.commit()
         database.close()
         return redirect('/users')
-    return render_template('cadastrar.html')
+    return render_template('register.html')
 @app.route('/delete_all')
 def delete():
     database = sqlite3.connect('users.db')
     cursor = database.cursor()
     cursor.execute("DELETE FROM user")
+    cursor.execute("DELETE FROM sqlite_sequence WHERE name='user'")
     database.commit()
     database.close()
     return redirect('/users')
