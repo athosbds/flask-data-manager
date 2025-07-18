@@ -8,7 +8,8 @@ def init_db():
     CREATE TABLE IF NOT EXISTS user(
     id INTEGER PRIMARY KEY AUTOINCREMENT, 
     name text NOT NULL, 
-    age text NOT NULL)''')
+    age text NOT NULL,
+    email VARCHAR(254) NOT NULL UNIQUE)''')
     database.commit()
 
 @app.route('/')
@@ -16,17 +17,30 @@ def index():
     return render_template('index.html')
 @app.route('/users')
 def listar_usuarios():
-   # lógica
+    database = sqlite3.connect('users.db')
+    database_cursor = database.cursor()
+    database_cursor.execute("SELECT * FROM user")
+    users = database_cursor.fetchall()
     return render_template('users.html', users=users)
 @app.route('/add', methods=['GET', 'POST'])
 def add():
     if request.method == 'POST':
-        #lógica
+        name = request.form['name']
+        age = request.form['age']
+        email = request.form['email']
+        database = sqlite3.connect('users.db')
+        database_cursor = database.cursor()
+        database_cursor.execute("INSERT INTO user(name, age, email) VALUES(?, ?, ?)", (name, age, email))
+        database.commit()
         return redirect('/users')
     return render_template('register.html')
 @app.route('/delete_all')
 def delete():
-    #lógica
+    database = sqlite3.connect('users.db')
+    database_cursor = database.cursor()
+    database_cursor.execute("DELETE FROM user")
+    database_cursor.execute("DELETE FROM sqlite_sequence WHERE name='user'")
+    database.commit()
     return redirect('/users')
 
 if __name__ == "__main__":
