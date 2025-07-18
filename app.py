@@ -42,7 +42,11 @@ def delete():
     database_cursor.execute("DELETE FROM sqlite_sequence WHERE name='user'")
     database.commit()
     return redirect('/users')
-
+@app.route('/update')
+def update():
+    database = sqlite3.connect('users.db')
+    database_cursor = database.cursor()
+    # continuando...
 if __name__ == "__main__":
     init_db()
     app.run(debug=True)
