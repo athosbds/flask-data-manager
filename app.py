@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
 app = Flask(__name__)
 def init_db():
@@ -42,11 +42,21 @@ def delete():
     database_cursor.execute("DELETE FROM sqlite_sequence WHERE name='user'")
     database.commit()
     return redirect('/users')
-@app.route('/update')
-def update():
+@app.route('/update/<int:id>', methods=['GET', 'POST'])
+def update(id):
     database = sqlite3.connect('users.db')
     database_cursor = database.cursor()
-    # continuando...
+    user = database_cursor.execute("SELECT * FROM user WHERE id= ?", (id,)).fetchone()
+    if request.method == 'POST':
+        name = request.form['name']
+        age = request.form['age']
+        email = request.form['email']
+        database_cursor.execute("UPDATE user SET name = ?, age = ?, email = ? WHERE id = ?", (name, age, email, id))
+        database.commit()
+        database.close()
+        return redirect('/users')
+    database.close()
+    return render_template('update.html', user=user)
 if __name__ == "__main__":
     init_db()
     app.run(debug=True)
