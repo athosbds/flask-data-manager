@@ -35,13 +35,22 @@ def add():
         return redirect('/users')
     return render_template('register.html')
 @app.route('/delete_all')
-def delete():
+def delete_all():
     database = sqlite3.connect('users.db')
     database_cursor = database.cursor()
     database_cursor.execute("DELETE FROM user")
     database_cursor.execute("DELETE FROM sqlite_sequence WHERE name='user'")
     database.commit()
     return redirect('/users')
+@app.route('/delete_id/<int:user_id>')
+def delete_id(user_id):
+    database = sqlite3.connect('users.db')
+    database_cursor = database.cursor()
+    database_cursor.execute("DELETE FROM user WHERE id = ?", (user_id,))
+    database.commit()
+    database.close()
+    return redirect(url_for('listar_usuarios'))
+
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
     database = sqlite3.connect('users.db')
