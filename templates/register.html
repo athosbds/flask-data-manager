@@ -11,13 +11,14 @@
     <form method="POST">
         <label for="name">Nome:</label>
         <input type="text" name="name" required><br><br>
-        <label for="age">Idade:</label>
-        <input type="text" name="age" required><br><br>
+        <label for="age">Idade: </label>
+        <input type="number" name="age" required min="1"><br><br>
         <label for="email">Email: </label>
-        <input type="text" name="email" required><br><br>
-        <button type="submit">Cadastrar</button>
+        <input type="email" name="email" required><br><br>
+        <button type="submit" style="border-radius: 20px 24px; background-color: blue; text-decoration: none; color: white; padding: 10px 20px; display: inline-block; margin: 10px 0;">Cadastrar</button>
     </form>
     <br>
-    <a href="/">Voltar ao início</a> | <a href="/users">Ver usuários</a>
+    <a href="/" style="border-radius: 20px 24px; background-color: blueviolet; text-decoration: none; color: white; padding: 10px 20px; display: inline-block; margin: 10px 0;">Voltar ao início</a> 
+    <a href="/users" style="border-radius: 20px 24px; background-color: blueviolet; text-decoration: none; color: white; padding: 10px 20px; display: inline-block; margin: 10px 0;">Ver usuários</a>
 </body>
 </html>
