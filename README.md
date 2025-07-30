@@ -1,2 +1,2 @@
-# flaskDataManager
+# flask-data-manager
 
