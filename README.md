@@ -7,11 +7,6 @@ Um CRUD com **Python**, usando:
 
 
 ---
-            **Registro**
-![Imagem Ilustrativa](assets/register.gif)
-            **Deletar e Atualizar**
-![Imagem Ilustrativa](assets/register-and-delete.gif)
-
 ## O que esse projeto faz
 
 - Aplicação com Flask para Desenvolvimento Web
@@ -37,6 +32,9 @@ Um CRUD com **Python**, usando:
 git clone https://github.com/seu-usuario/flask-data-manager.git
 cd currency_converter
 ```
+
+![Imagem Ilustrativa](assets/register.gif)
+![Imagem Ilustrativa](assets/register-and-delete.gif)
 
 
 
