@@ -4,7 +4,7 @@ Um CRUD com **Python**, usando:
 
 - A biblioteca `Sqlite3` para acessar uma **Criação de Banco De Dados**
 - A biblioteca `Flask` para criar uma **interface web**
-- **Programação orientada a objetos (POO)** com classes para organizar o código
+
 
 ---
 *Registro*
@@ -14,9 +14,10 @@ Um CRUD com **Python**, usando:
 
 ## O que esse projeto faz
 
-- Converte valores entre moedas (ex: dólar → real, euro → )
-- Usa taxas de câmbio **atualizadas em tempo real**
-- Mostra uma interface simples no navegador
+- Aplicação com Flask para Desenvolvimento Web
+- Uso das Ferramentas SQLITE3 para uso do CRUD
+- CREATE, READ, UPDATE, DELETE
+
 
 ---
 
@@ -24,8 +25,7 @@ Um CRUD com **Python**, usando:
 
 - Python 3
 - [Flask](https://flask.palletsprojects.com/) – cria o site local
-- [Requests](https://docs.python-requests.org/en/latest/) – faz requisições HTTP
-- API de câmbio (como [ExchangeRate API](https://www.exchangerate-api.com/) ou [Exchangeratesapi.io](https://exchangeratesapi.io/))
+- [Sqlite3](https://www.sqlite.org/docs.html) – criação do banco de dados
 
 ---
 
@@ -34,7 +34,7 @@ Um CRUD com **Python**, usando:
 1. **Clone o repositório:**
 
 ```bash
-git clone https://github.com/seu-usuario/currency_converter.git
+git clone https://github.com/seu-usuario/flask-data-manager.git
 cd currency_converter
 ```
 
