@@ -7,9 +7,9 @@ Um CRUD com **Python**, usando:
 
 
 ---
-*Registro*
+            **Registro**
 ![Imagem Ilustrativa](assets/register.gif)
-*Deletar e Atualizar*
+            **Deletar e Atualizar**
 ![Imagem Ilustrativa](assets/register-and-delete.gif)
 
 ## O que esse projeto faz
