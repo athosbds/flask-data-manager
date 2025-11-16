@@ -1,42 +1,52 @@
 # 💱 Data Manager
 
-Um CRUD com **Python**, usando:
+[![Python](https://img.shields.io/badge/python-3.11-blue)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/flask-2.x-black)](https://flask.palletsprojects.com/)
+[![SQLite](https://img.shields.io/badge/sqlite-database-blue)](https://www.sqlite.org/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-- A biblioteca `Sqlite3` para acessar uma **Criação de Banco De Dados**
-- A biblioteca `Flask` para criar uma **interface web**
+## Overview
 
-
----
-## O que esse projeto faz
-
-- Aplicação com Flask para Desenvolvimento Web
-- Uso das Ferramentas SQLITE3 para uso do CRUD
-- CREATE, READ, UPDATE, DELETE
-
+**Data Manager** é um CRUD completo desenvolvido com **Flask** e **SQLite**, ideal para estudar desenvolvimento web e manipulação de banco de dados.  
+A aplicação oferece uma interface intuitiva para criar, visualizar, editar e excluir registros.
 
 ---
 
-## Tecnologias
+## 🚀 Funcionalidades
 
-- Python 3
-- [Flask](https://flask.palletsprojects.com/) – cria o site local
-- [Sqlite3](https://www.sqlite.org/docs.html) – criação do banco de dados
+- Criar novos registros
+- Listar todos os dados armazenados
+- Atualizar informações existentes
+- Remover registros do banco
+- Interface web simples e objetiva
 
 ---
 
-## Como instalar e rodar
+## 📸 Preview
 
-1. **Clone o repositório:**
+![Cadastro](assets/register.gif)
+![Cadastro e Delete](assets/register-and-delete.gif)
+
+---
+
+## 🧠 Tecnologias Utilizadas
+
+- **Python 3** – linguagem principal  
+- **Flask** – backend e renderização de páginas  
+  https://flask.palletsprojects.com/  
+- **SQLite3** – banco de dados leve e integrado  
+  https://www.sqlite.org/docs.html  
+
+
+---
+
+## 🛠️ Como Instalar e Rodar
+
+### 1. Clone o repositório
 
 ```bash
 git clone https://github.com/seu-usuario/flask-data-manager.git
-cd currency_converter
-```
-
-![Imagem Ilustrativa](assets/register.gif)
-![Imagem Ilustrativa](assets/register-and-delete.gif)
-
-
+cd flask-data-manager
 
 
 
